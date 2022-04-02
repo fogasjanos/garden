@@ -27,35 +27,35 @@ public class Orchard {
     }
 
     public boolean isUpAvailable(Point p) {
-        boolean up = p.getY() > MIN_Y;
+        boolean up = p.y() > MIN_Y;
         log.debug("Point: {} up: {}", p, up);
         return up;
     }
 
     public Point moveUp(Point p) {
-        int x = p.getX();
-        int y = p.getY() - 1;
+        int x = p.x();
+        int y = p.y() - 1;
         Point newP = new Point(x, y, getApples(x, y), p.getAllApples());
         log.debug("Moving UP from {} to {}", p, newP);
         return newP;
     }
 
     public boolean isRightAvailable(Point p) {
-        boolean right = p.getX() < lastElementIndex;
+        boolean right = p.x() < lastElementIndex;
         log.debug("Point: {} right: {}", p, right);
         return right;
     }
 
     public Point moveRight(Point p) {
-        int x = p.getX() + 1;
-        int y = p.getY();
+        int x = p.x() + 1;
+        int y = p.y();
         Point newP = new Point(x, y, getApples(x, y), p.getAllApples());
         log.debug("Moving RIGHT from {} to {}", p, newP);
         return newP;
     }
 
     public boolean isDone(Point p) {
-        boolean done = p.getX() == lastElementIndex && p.getY() == MIN_Y;
+        boolean done = p.x() == lastElementIndex && p.y() == MIN_Y;
         log.debug("Point: {} done: {}", p, done);
         return done;
     }

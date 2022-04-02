@@ -56,8 +56,8 @@ public class OrchardTest {
         assertNotNull(actual);
         assertNotEquals(p, actual, "The new point should not be equal with the old one.");
         assertEquals(DATA[newY][x], actual.getSum(NO_TOKEN));
-        assertEquals(x, actual.getX());
-        assertEquals(newY, actual.getY());
+        assertEquals(x, actual.x());
+        assertEquals(newY, actual.y());
     }
 
     @Test
@@ -86,8 +86,8 @@ public class OrchardTest {
         assertNotNull(actual);
         assertNotEquals(p, actual, "The new point should not be equal with the old one.");
         assertEquals(DATA[y][newX], actual.getSum(NO_TOKEN));
-        assertEquals(newX, actual.getX());
-        assertEquals(y, actual.getY());
+        assertEquals(newX, actual.x());
+        assertEquals(y, actual.y());
     }
 
     @Test

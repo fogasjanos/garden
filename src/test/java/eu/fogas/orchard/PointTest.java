@@ -16,8 +16,8 @@ public class PointTest {
 
         Point p = new Point(x, y, apples);
 
-        assertEquals(x, p.getX());
-        assertEquals(y, p.getY());
+        assertEquals(x, p.x());
+        assertEquals(y, p.y());
         assertEquals(apples, p.getSum(NO_TOKEN));
     }
 

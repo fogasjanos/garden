@@ -1,27 +1,18 @@
 package eu.fogas.orchard;
 
-import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Arrays;
 
 @Slf4j
-@Data
-public class Point {
-    private final int x;
-    private final int y;
-    private final int[] allApples;
-
+record Point(int x, int y, int[] allApples) {
     public Point(int x, int y, int apples) {
         this(x, y, apples, null);
     }
 
     public Point(int x, int y, int apples, int[] initialApples) {
+        this(x, y, getApples(initialApples, apples));
         log.debug("Creating new Point. x: {}, y: {}, apples: {}, initialApples: {}", x, y, apples, initialApples);
-        this.x = x;
-        this.y = y;
-        allApples = getApples(initialApples, apples);
-        log.debug("New Point created: {}", this);
     }
 
     public int[] getAllApples() {
@@ -48,7 +39,7 @@ public class Point {
         return sum;
     }
 
-    private int[] getApples(int[] initialApples, int apples) {
+    private static int[] getApples(int[] initialApples, int apples) {
         if (initialApples == null) {
             log.debug("InitialApples was null. Apples: {}", apples);
             return handleNullArray(apples);
@@ -56,13 +47,13 @@ public class Point {
         return copyAndExtendArray(initialApples, apples);
     }
 
-    private int[] handleNullArray(int value) {
+    private static int[] handleNullArray(int value) {
         return new int[]{
                 value
         };
     }
 
-    private int[] copyAndExtendArray(int[] initialApples, int apples) {
+    private static int[] copyAndExtendArray(int[] initialApples, int apples) {
         log.debug("InitialApples: {}. Apples: {}", initialApples, apples);
         int[] a = Arrays.copyOf(initialApples, initialApples.length + 1);
         a[a.length - 1] = apples;
