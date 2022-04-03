@@ -10,7 +10,7 @@ dependencies {
     val lombokVersion = "1.18.22"
     val slf4jVersion = "1.7.36"
     val logbackVersion = "1.2.11"
-    val jacksonVersion = "2.13.2"
+    val jacksonVersion = "2.13.2.2"
     val mockitoVersion = "4.4.0"
     val junitVersion = "5.8.2"
 
