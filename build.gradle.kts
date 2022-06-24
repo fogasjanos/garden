@@ -7,11 +7,11 @@ repositories {
 }
 
 dependencies {
-    val lombokVersion = "1.18.22"
-    val slf4jVersion = "1.7.36"
     val logbackVersion = "1.2.11"
-    val jacksonVersion = "2.13.2.2"
-    val mockitoVersion = "4.4.0"
+    val lombokVersion = "1.18.24"
+    val slf4jVersion = "1.7.36"
+    val mockitoVersion = "4.6.1"
+    val jacksonVersion = "2.13.3"
     val junitVersion = "5.8.2"
 
 
