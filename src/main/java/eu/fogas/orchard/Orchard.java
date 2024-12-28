@@ -7,7 +7,7 @@ import java.util.Arrays;
 
 @Slf4j
 @Data
-public class Orchard {
+class Orchard {
     private static final int START_X = 0;
     private static final int MIN_Y = 0;
     private final int lastElementIndex;
